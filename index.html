@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>SVG Spinning Circles</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .layer {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .layer-1 {
+                background-image: url('pattern.svg');
+                background-position: 0px 0px;
+                animation: trippy 3s linear infinite;
+            }
+
+            .layer-2 {
+                background-image: url('pattern.svg');
+                background-position: 0px 0px;
+                animation: slide 10s linear infinite, trippy 6s linear infinite;
+                mix-blend-mode: difference;
+            }
+
+/*
+            mix-blend-mode: normal;
+mix-blend-mode: multiply;
+mix-blend-mode: screen;
+mix-blend-mode: overlay;
+mix-blend-mode: darken;
+mix-blend-mode: lighten;
+mix-blend-mode: color-dodge;
+mix-blend-mode: color-burn;
+mix-blend-mode: hard-light;
+mix-blend-mode: soft-light;
+mix-blend-mode: difference;
+mix-blend-mode: exclusion;
+mix-blend-mode: hue;
+mix-blend-mode: saturation;
+mix-blend-mode: color;
+mix-blend-mode: luminosity;
+*/
+
+            @keyframes trippy {
+                0% { filter: hue-rotate(0deg); }
+                50% { filter: hue-rotate(180deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+
+           @keyframes slide {
+                from {
+                    background-position: 0px 0px;
+                }
+                to {
+                    background-position: 400px 400px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layer layer-1">
+        </div>
+
+        <div class="layer layer-2">
+        </div>
+    </body>
+</html>
