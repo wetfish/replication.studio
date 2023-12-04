@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Rainbow Experiment</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .layer {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .layer-1 {
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 0, 0, 1) 0%,
+                    rgba(255, 154, 0, 1) 10%,
+                    rgba(208, 222, 33, 1) 20%,
+                    rgba(79, 220, 74, 1) 30%,
+                    rgba(63, 218, 216, 1) 40%,
+                    rgba(47, 201, 226, 1) 50%,
+                    rgba(28, 127, 238, 1) 60%,
+                    rgba(95, 21, 242, 1) 70%,
+                    rgba(186, 12, 248, 1) 80%,
+                    rgba(251, 7, 217, 1) 90%,
+                    rgba(255, 0, 0, 1) 100%
+                );
+            }
+
+            .layer-2 {
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 0, 0, 1) 0%,
+                    rgba(255, 154, 0, 1) 10%,
+                    rgba(208, 222, 33, 1) 20%,
+                    rgba(79, 220, 74, 1) 30%,
+                    rgba(63, 218, 216, 1) 40%,
+                    rgba(47, 201, 226, 1) 50%,
+                    rgba(28, 127, 238, 1) 60%,
+                    rgba(95, 21, 242, 1) 70%,
+                    rgba(186, 12, 248, 1) 80%,
+                    rgba(251, 7, 217, 1) 90%,
+                    rgba(255, 0, 0, 1) 100%
+                );
+
+                filter: invert(1);
+
+                animation: slide 5s linear infinite, trippy 5s linear infinite;
+            }
+
+            .controls {
+                z-index: 10;
+            }
+
+            @keyframes trippy {
+                0% { filter: hue-rotate(0deg); }
+                50% { filter: hue-rotate(180deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+
+           @keyframes slide {
+                from {
+                    background-position: 0px 0px;
+                }
+                to {
+                    background-position: 100vw 100vh;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layer layer-1">
+        </div>
+        <div class="layer layer-2">
+        </div>
+
+        <duv class="layer controls">
+            Blend Mode
+
+            <select id="blend-mode" onChange="updateBlendMode()">
+                <option>normal</option>
+                <option>multiply</option>
+                <option>screen</option>
+                <option>overlay</option>
+                <option>darken</option>
+                <option>lighten</option>
+                <option>color-dodge</option>
+                <option>color-burn</option>
+                <option>hard-light</option>
+                <option>soft-light</option>
+                <option>difference</option>
+                <option>exclusion</option>
+                <option>hue</option>
+                <option>saturation</option>
+                <option>color</option>
+                <option>luminosity</option>
+            </select>
+        </div>
+
+        <script>
+            function updateBlendMode() {
+                const value = document.getElementById('blend-mode').value;
+                document.getElementsByClassName('layer-2')[0].style['mix-blend-mode'] = value;
+            }
+        </script>
+    </body>
+</html>
