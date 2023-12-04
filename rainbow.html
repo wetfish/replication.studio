@@ -37,6 +37,8 @@
                     rgba(251, 7, 217, 1) 90%,
                     rgba(255, 0, 0, 1) 100%
                 );
+
+                animation: trippy 5s linear infinite;
             }
 
             .layer-2 {
@@ -55,9 +57,10 @@
                     rgba(255, 0, 0, 1) 100%
                 );
 
-                filter: invert(1);
+                //filter: invert(1);
 
-                animation: slide 5s linear infinite, trippy 5s linear infinite;
+                animation: slide 5s linear infinite;
+                mix-blend-mode: normal;
             }
 
             .controls {
@@ -88,10 +91,12 @@
         </div>
 
         <duv class="layer controls">
+            <a href="./index.html">Go to Home Page</a>
+
             Blend Mode
 
             <select id="blend-mode" onChange="updateBlendMode()">
-                <option>normal</option>
+                <option selected>normal</option>
                 <option>multiply</option>
                 <option>screen</option>
                 <option>overlay</option>

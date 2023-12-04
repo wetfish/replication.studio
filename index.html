@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>SVG Spinning Circles</title>
+        <title>Trippy SVG Patterns</title>
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,27 +31,10 @@
             .layer-2 {
                 background-image: url('pattern.svg');
                 background-position: 0px 0px;
-                animation: slide 10s linear infinite, trippy 20s linear infinite;
+                animation: slide 10s linear infinite;
+                opacity: 1;
+                mix-blend-mode: luminosity;
             }
-
-/*
-            mix-blend-mode: normal;
-mix-blend-mode: multiply;
-mix-blend-mode: screen;
-mix-blend-mode: overlay;
-mix-blend-mode: darken;
-mix-blend-mode: lighten;
-mix-blend-mode: color-dodge;
-mix-blend-mode: color-burn;
-mix-blend-mode: hard-light;
-mix-blend-mode: soft-light;
-mix-blend-mode: difference;
-mix-blend-mode: exclusion;
-mix-blend-mode: hue;
-mix-blend-mode: saturation;
-mix-blend-mode: color;
-mix-blend-mode: luminosity;
-*/
 
             @keyframes trippy {
                 0% { filter: hue-rotate(0deg); }
@@ -78,6 +61,8 @@ mix-blend-mode: luminosity;
         </div>
 
         <duv class="layer controls">
+            <a href="./rainbow.html">Rainbow Experiment</a>
+
             Blend Mode
 
             <select id="blend-mode" onChange="updateBlendMode()">
@@ -96,7 +81,7 @@ mix-blend-mode: luminosity;
                 <option>hue</option>
                 <option>saturation</option>
                 <option>color</option>
-                <option>luminosity</option>
+                <option selected>luminosity</option>
             </select>
         </div>
 
