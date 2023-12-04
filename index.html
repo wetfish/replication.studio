@@ -23,16 +23,15 @@
             }
 
             .layer-1 {
-                background-image: url('pattern.svg');
+                background-image: url('inverted-pattern.svg');
                 background-position: 0px 0px;
-                animation: trippy 3s linear infinite;
+                animation: trippy 8s linear infinite;
             }
 
             .layer-2 {
                 background-image: url('pattern.svg');
                 background-position: 0px 0px;
-                animation: slide 10s linear infinite, trippy 6s linear infinite;
-                mix-blend-mode: difference;
+                animation: slide 10s linear infinite, trippy 20s linear infinite;
             }
 
 /*
@@ -77,5 +76,35 @@ mix-blend-mode: luminosity;
 
         <div class="layer layer-2">
         </div>
+
+        <duv class="layer controls">
+            Blend Mode
+
+            <select id="blend-mode" onChange="updateBlendMode()">
+                <option>normal</option>
+                <option>multiply</option>
+                <option>screen</option>
+                <option>overlay</option>
+                <option>darken</option>
+                <option>lighten</option>
+                <option>color-dodge</option>
+                <option>color-burn</option>
+                <option>hard-light</option>
+                <option>soft-light</option>
+                <option>difference</option>
+                <option>exclusion</option>
+                <option>hue</option>
+                <option>saturation</option>
+                <option>color</option>
+                <option>luminosity</option>
+            </select>
+        </div>
+
+        <script>
+            function updateBlendMode() {
+                const value = document.getElementById('blend-mode').value;
+                document.getElementsByClassName('layer-2')[0].style['mix-blend-mode'] = value;
+            }
+        </script>
     </body>
 </html>
