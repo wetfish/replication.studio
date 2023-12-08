@@ -12,6 +12,8 @@
             body {
                 margin: 0;
                 padding: 0;
+                font-size: 2em;
+                color: #fff;
             }
 
             .layer {
@@ -34,6 +36,30 @@
                 animation: slide 10s linear infinite;
                 opacity: 1;
                 mix-blend-mode: luminosity;
+            }
+
+            a {
+                color: #E87EE1;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            a:hover {
+                border: 2px solid #E87EE1;
+                background-color: #E87EE144;
+                color: #fff;
+                border-radius: 8px;
+                padding: 0 1em;
+            }
+
+            select {
+                font-size: 1em;
+            }
+
+            .controls {
+                background-color: #00000099;
+                height: 55px;
+                padding: 0 0.5em;
             }
 
             @keyframes trippy {
@@ -61,7 +87,8 @@
         </div>
 
         <duv class="layer controls">
-            <a href="./rainbow.html">Rainbow Experiment</a>
+            <a href="./rainbow.html">Rainbow</a> |
+            <a href="./sunrise.html">Sunrise</a> |
 
             Blend Mode
 
